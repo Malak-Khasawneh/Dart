@@ -13,32 +13,19 @@ void main() {
 //get the second number
   print("enter the first number:");
   double? num2 = double.parse(stdin.readLineSync()!);
-  double result;
+  double result = 0;
 
-  switch (operator) {
-    case '+':
-      result = num1 + num2;
-      break;
-
-    case '-':
-      result = num1 - num2;
-      break;
-
-    case '*':
-      result = num1 * num2;
-      break;
-
-    case '/':
-      if (num2 == 0) {
-        print("division by zero invalid");
-        return;
-      } else {
-        result = num1 / num2;
-      }
-      break;
-    default:
-      print("invalid operation");
-      return;
+  if (operator == '+')
+    result = num1 + num2;
+  else if (operator == '-')
+    result = num1 - num2;
+  else if (operator == '*')
+    result = num1 * num2;
+  else if (operator == '/') {
+    if (num2 == 0) {
+      print("division by zero invalid");
+    } else
+      result = num1 / num2;
   }
   print("result=$result");
 }
